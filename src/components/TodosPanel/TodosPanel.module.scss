@@ -1,0 +1,33 @@
+.layaot {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgb(44, 44, 44);
+    color: white;
+
+    position: relative;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.absolute {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+

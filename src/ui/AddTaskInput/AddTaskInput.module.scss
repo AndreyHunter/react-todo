@@ -1,0 +1,14 @@
+.input {
+    min-height: 42px;
+    padding: 5px 10px;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    color: rgb(0, 0, 0, 0.7);
+    transition: var(--main-transition);
+
+    &:focus {
+        box-shadow: 0 0 10px white;
+    }
+}

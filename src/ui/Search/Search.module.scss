@@ -1,0 +1,23 @@
+.wrapper {
+    width: 50%;
+    position: relative;
+}
+
+.search {
+    width: 100%;
+    min-height: 22px;
+    padding: 7px 10px;
+    border-radius: 8px;
+    color: rgba(0, 0, 0, 0.8);
+    outline: none;
+    border: none;
+}
+
+.icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px;
+    color: rgba(0, 0, 0, 0.765);
+    font-size: 1.2rem;
+}

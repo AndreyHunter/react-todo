@@ -1,0 +1,14 @@
+.box input {
+    display: none;
+}
+
+.check {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    background-color: rgb(39, 38, 38);
+    cursor: pointer;
+}

@@ -1,0 +1,19 @@
+.item {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    font-size: 1.1rem;
+}
+
+.text {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    max-width: 570px;
+}
+
+.options {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}

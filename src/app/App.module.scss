@@ -1,0 +1,13 @@
+.app {
+    max-width: 1440px;
+    padding: 0 15px;
+    padding-top: 100px;
+    margin: 0 auto;
+}
+
+.layaot {
+    min-height: 600px;
+    display: grid;
+    grid-template-columns: 0.6fr 1fr;
+    gap: 30px;
+}
