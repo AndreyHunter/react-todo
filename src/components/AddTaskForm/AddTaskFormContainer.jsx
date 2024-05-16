@@ -1,7 +1,8 @@
-import { useDispatch } from "react-redux";
-import { setModal } from "./../../redux/reducers/todo-modal-reducer";
+import { useDispatch } from 'react-redux';
+import { addTodoAc } from '../../redux/reducers/todo-reducer';
+import { setModal } from './../../redux/reducers/todo-modal-reducer';
 
-import AddTaskForm from "./AddTaskForm";
+import AddTaskForm from './AddTaskForm';
 
 const AddTaskFormContainer = () => {
     const dispatch = useDispatch();
@@ -10,7 +11,16 @@ const AddTaskFormContainer = () => {
         dispatch(setModal(false));
     };
 
-    return <AddTaskForm closeModal={closeModalHandler} />;
+    const addTodo = (text) => {
+        dispatch(addTodoAc(text));
+    };
+
+    return (
+        <AddTaskForm
+            addTodo={addTodo}
+            closeModal={closeModalHandler}
+        />
+    );
 };
 
 export default AddTaskFormContainer;

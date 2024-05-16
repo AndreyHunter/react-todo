@@ -1,12 +1,12 @@
 import { FaPen } from "react-icons/fa";
 import styles from "./EditTaskBtn.module.scss";
 
-const EditTaskBtn = ({ onclick }) => {
+const EditTaskBtn = ({ onClick }) => {
     return (
         <button
             type="button"
             className={styles.btn}
-            onClick={onclick}>
+            onClick={onClick}>
             <FaPen />
         </button>
     );
