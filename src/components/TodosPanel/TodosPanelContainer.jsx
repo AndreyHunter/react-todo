@@ -1,22 +1,32 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteTodoAc, editTodoAc, toggleStatusAc } from './../../redux/reducers/todo-reducer';
+import {
+    deleteTodo,
+    editTodo,
+    fetchTodos,
+    toggleStatusTodo,
+} from './../../redux/todos/todos-actins';
 import TodosPanel from './TodosPanel';
+import { useEffect } from 'react';
 
 const TodosPanelContainer = () => {
     const dispatch = useDispatch();
     const todos = useSelector((state) => state.todos.todos);
 
+    useEffect(() => {
+        dispatch(fetchTodos());
+    }, [dispatch]);
+
     const deleteTodoHandler = (id) => {
-        dispatch(deleteTodoAc(id));
+        dispatch(deleteTodo(id));
     };
 
     const editTodoHandler = (id, text) => {
         if (!text) return;
-        dispatch(editTodoAc(id, text));
+        dispatch(editTodo(id, text));
     };
 
-    const toggleStatusHandler = (id) => {
-        dispatch(toggleStatusAc(id));
+    const toggleStatusHandler = (id, done) => {
+        dispatch(toggleStatusTodo(id, done));
     };
 
     return (

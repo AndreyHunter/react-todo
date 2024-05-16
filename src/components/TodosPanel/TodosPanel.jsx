@@ -21,7 +21,7 @@ const TodosPanel = ({ todos, deleteTodo, editTodo, toggleStatus }) => {
                             text={task.text}
                             deleteTodo={() => deleteTodo(task.id)}
                             editTodo={() => editTodo(task.id, prompt())}
-                            toggleStatus={() => toggleStatus(task.id)}
+                            toggleStatus={() => toggleStatus(task.id, task.done)}
                             isDone={task.done}
                         />
                     ))}

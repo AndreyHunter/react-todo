@@ -1,40 +1,23 @@
-import { v4 as uuidv4 } from 'uuid';
-
-const ADD_TODO = 'ADD_TODO';
-const DELETE_TODO = 'DELETE_TODO';
-const EDIT_TODO = 'EDIT_TODO';
-const TOGGLE_STATUS = 'TOGGLE_STATUS';
-
-export const addTodoAc = (text) => {
-    return { type: ADD_TODO, payload: text };
-};
-
-export const deleteTodoAc = (id) => {
-    return { type: DELETE_TODO, id };
-};
-
-export const editTodoAc = (id, text) => {
-    return { type: EDIT_TODO, id, text };
-};
-
-export const toggleStatusAc = (id) => {
-    return { type: TOGGLE_STATUS, id };
-};
+import {
+    FETCH_TODOS_START,
+    FETCH_TODOS_SUCCESS,
+    FETCH_TODOS_ERROR,
+    ADD_TODO,
+    DELETE_TODO,
+    EDIT_TODO,
+    TOGGLE_STATUS,
+} from './todos-actins';
 
 const initialState = {
     todos: [],
+    loading: false,
+    error: null,
 };
 
 const todoReducer = (state = initialState, action) => {
     switch (action.type) {
-        case ADD_TODO: {
-            const todo = {
-                id: uuidv4(),
-                text: action.payload,
-                done: false,
-            };
-            return { ...state, todos: [...state.todos, todo] };
-        }
+        case ADD_TODO:
+            return { ...state, todos: [...state.todos, action.payload] };
         case DELETE_TODO:
             return { ...state, todos: state.todos.filter((task) => task.id !== action.id) };
         case EDIT_TODO:
@@ -57,6 +40,12 @@ const todoReducer = (state = initialState, action) => {
                     return task;
                 }),
             };
+        case FETCH_TODOS_START:
+            return { ...state, loading: true };
+        case FETCH_TODOS_SUCCESS:
+            return { ...state, loading: false, todos: action.payload };
+        case FETCH_TODOS_ERROR:
+            return { ...state, loading: false, error: action.payload };
         default:
             return state;
     }

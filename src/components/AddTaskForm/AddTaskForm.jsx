@@ -10,9 +10,11 @@ const AddTaskForm = ({ addTodo, closeModal }) => {
 
     const addTodoHandler = (e) => {
         e.preventDefault();
-        addTodo(taskText);
-        setTaskText('');
-        closeModal();
+        if (taskText) {
+            addTodo(taskText);
+            setTaskText('');
+            closeModal();
+        }
     };
 
     return (

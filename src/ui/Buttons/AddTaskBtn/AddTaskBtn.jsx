@@ -1,7 +1,7 @@
-import { useDispatch } from "react-redux";
-import { setModal } from "./../../../redux/reducers/todo-modal-reducer";
+import { useDispatch } from 'react-redux';
+import { setModal } from './../../../redux/todos/todo-modal-reducer';
 
-import styles from "./AddTaskBtn.module.scss";
+import styles from './AddTaskBtn.module.scss';
 
 const AddTaskBtn = () => {
     const dispatch = useDispatch();

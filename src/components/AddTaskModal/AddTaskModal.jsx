@@ -1,11 +1,11 @@
-import AddTaskFormContainer from "./../AddTaskForm/AddTaskFormContainer";
-import { IoClose } from "react-icons/io5";
+import AddTaskFormContainer from './../AddTaskForm/AddTaskFormContainer';
+import { IoClose } from 'react-icons/io5';
 
-import { useDispatch, useSelector } from "react-redux";
-import { setModal } from "./../../redux/reducers/todo-modal-reducer";
+import { useDispatch, useSelector } from 'react-redux';
+import { setModal } from './../../redux/todos/todo-modal-reducer';
 
-import styles from "./AddTaskModal.module.scss";
-import { useEffect, useRef } from "react";
+import styles from './AddTaskModal.module.scss';
+import { useEffect, useRef } from 'react';
 
 const AddTaskModal = () => {
     const dispatch = useDispatch();
@@ -26,24 +26,24 @@ const AddTaskModal = () => {
 
         const closeModalOnKey = (e) => {
             const code = e.code;
-            if (code === "Escape") {
+            if (code === 'Escape') {
                 dispatch(setModal(false));
             }
         };
 
-        document.addEventListener("mouseup", closeModal);
-        document.addEventListener("keydown", closeModalOnKey);
+        document.addEventListener('mouseup', closeModal);
+        document.addEventListener('keydown', closeModalOnKey);
 
         return () => {
-            document.removeEventListener("mouseup", closeModal);
-            document.removeEventListener("keydown", closeModalOnKey);
+            document.removeEventListener('mouseup', closeModal);
+            document.removeEventListener('keydown', closeModalOnKey);
         };
     }, []);
 
     return (
-        <div className={`${styles.modal} ${isOpen ? styles.active : ""}`}>
+        <div className={`${styles.modal} ${isOpen ? styles.active : ''}`}>
             <div
-                className={`${styles.content} ${isOpen ? styles.active : ""}`}
+                className={`${styles.content} ${isOpen ? styles.active : ''}`}
                 ref={modalRef}>
                 <div className={styles.header}>
                     <div className={styles.title}>Add task</div>

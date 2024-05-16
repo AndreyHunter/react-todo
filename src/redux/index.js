@@ -1,12 +1,12 @@
-import { legacy_createStore as createStore, combineReducers, applyMiddleware } from "redux";
-import { thunk } from "redux-thunk";
+import { legacy_createStore as createStore, combineReducers, applyMiddleware } from 'redux';
+import { thunk } from 'redux-thunk';
 
-import todoReducer from "./reducers/todo-reducer";
-import todoModalReducer from "./reducers/todo-modal-reducer";
+import todoReducer from './todos/todo-reducer';
+import todoModalReducer from './todos/todo-modal-reducer';
 
 const reducers = combineReducers({
     todos: todoReducer,
-    todoModal: todoModalReducer
+    todoModal: todoModalReducer,
 });
 
 const store = createStore(reducers, applyMiddleware(thunk));

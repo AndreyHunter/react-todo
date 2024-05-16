@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
-import { addTodoAc } from '../../redux/reducers/todo-reducer';
-import { setModal } from './../../redux/reducers/todo-modal-reducer';
+import { postTodo } from '../../redux/todos/todos-actins';
+import { setModal } from './../../redux/todos/todo-modal-reducer';
 
 import AddTaskForm from './AddTaskForm';
 
@@ -12,7 +12,7 @@ const AddTaskFormContainer = () => {
     };
 
     const addTodo = (text) => {
-        dispatch(addTodoAc(text));
+        dispatch(postTodo(text));
     };
 
     return (
